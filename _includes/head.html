@@ -12,5 +12,19 @@
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
 </script>
 
+<!-- Idioma por defecto: español. El visitante lo cambia con el botón del menú. -->
+<script>
+  (function () {
+    var lang = 'es';
+    try { lang = localStorage.getItem('lang') || 'es'; } catch (e) {}
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.lang = lang;
+  })();
+</script>
+<style>
+  html[data-lang="es"] .lang-en { display: none !important; }
+  html[data-lang="en"] .lang-es { display: none !important; }
+</style>
+
 <!-- For all browsers -->
 <link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">

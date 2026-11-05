@@ -1,30 +1,23 @@
-# The following is the order of the links in the header of the website.
-#
-# Changing the order here will adjust the order and you can also add additional
-# links. Removing a link prevents it from showing in the header, but does not
-# prevent it from being included in the site.
-#
-# NOTE that only one of the CV options should be selected, the first is for the
-#      Markdown formatted page while the second is generated using JSON.
-
+# Orden de los enlaces de la cabecera. Cada título tiene su versión en español e inglés;
+# el visitante ve una de las dos según el botón de idioma.
 main:
-  - title: "Publications"
+  - title: '<span class="lang-es">Inicio</span><span class="lang-en">Home</span>'
+    url: /
+
+  - title: '<span class="lang-es">Proyectos</span><span class="lang-en">Projects</span>'
+    url: /portfolio/
+
+  - title: '<span class="lang-es">Publicaciones</span><span class="lang-en">Publications</span>'
     url: /publications/
 
-  - title: "Talks"
-    url: /talks/    
+  - title: '<span class="lang-es">Docencia</span><span class="lang-en">Teaching</span>'
+    url: /teaching/
 
-  - title: "Teaching"
-    url: /teaching/    
-    
-  - title: "Portfolio"
-    url: /portfolio/
-        
-  - title: "Blog Posts"
-    url: /year-archive/
-    
-  - title: "CV"
-    url: /cv/
-    
-  - title: "Guide"
-    url: /markdown/
+  - title: '<span class="lang-es">Vídeos</span><span class="lang-en">Videos</span>'
+    url: https://www.youtube.com/@mane6690
+
+  - title: '<span class="lang-es">Código y datasets</span><span class="lang-en">Code &amp; datasets</span>'
+    url: /codigo/
+
+  - title: '<span class="lang-es">Contacto</span><span class="lang-en">Contact</span>'
+    url: /contacto/

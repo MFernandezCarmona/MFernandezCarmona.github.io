@@ -18,6 +18,9 @@
               <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
             </li>
           {% endfor %}
+          <li class="masthead__menu-item persist">
+            <a href="#" id="lang-toggle" role="button" aria-label="Cambiar idioma / Switch language"><span id="lang-label">🇬🇧 EN</span></a>
+          </li>
           <li id="theme-toggle" class="masthead__menu-item persist tail">
             <a role="button" aria-labelledby="theme-icon"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
           </li>
@@ -27,3 +30,24 @@
     </div>
   </div>
 </div>
+<script>
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById('lang-toggle');
+    var label = document.getElementById('lang-label');
+    if (!btn) return;
+    function apply(lang) {
+      root.setAttribute('data-lang', lang);
+      root.lang = lang;
+      label.textContent = lang === 'es' ? '🇬🇧 EN' : '🇪🇸 ES';
+      btn.title = lang === 'es' ? 'Switch to English' : 'Cambiar a español';
+    }
+    apply(root.getAttribute('data-lang') || 'es');
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var next = root.getAttribute('data-lang') === 'es' ? 'en' : 'es';
+      try { localStorage.setItem('lang', next); } catch (err) {}
+      apply(next);
+    });
+  })();
+</script>
